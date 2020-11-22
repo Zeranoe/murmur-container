@@ -24,7 +24,7 @@ podman build -t murmur .
 ```
 podman run -d --name murmur --uidmap 0:1:998 --uidmap 998:0:1 --gidmap 0:1:996 \
 --gidmap 996:0:1 -v ./murmur.ini:/etc/murmur/murmur.ini:z \
--v ./database:/var/lib/mumble-server:z -p 64738 murmur
+-v ./database:/var/lib/mumble-server:z -p 64738:64738 -p 64738:64738/udp murmur
 ```
 
 ## Stopping
