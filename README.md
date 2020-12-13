@@ -42,6 +42,14 @@ podman create --name murmur --uidmap 0:1:102 --uidmap 102:0:1 \
 podman start murmur
 ```
 
+## Setting SuperUser password
+
+```
+podman run --rm -it --uidmap 0:1:102 --uidmap 102:0:1 \
+-v ./mumble-server.ini:/etc/mumble-server.ini:z \
+-v ./database:/var/lib/mumble-server:z murmur -supw <password>
+```
+
 ## Stopping
 
 ```
